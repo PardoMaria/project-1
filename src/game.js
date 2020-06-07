@@ -7,13 +7,13 @@ class Game {
       this._bg = new Background(ctx)
       this._maria = new Maria(ctx)
       this._obstacles = [
-        new Obstacle(ctx)
+        //new Obstacle(ctx)
       ]
       this.coins = [
           new Coin(ctx)
       ]
       this.beer = [
-        new Beer(ctx)
+        //new Beer(ctx)
       ]
       //tick obstaculos
       this.tick = 0
@@ -37,7 +37,7 @@ class Game {
       }
 
       _addObstacle() {
-        if (this.tick++ === 100) {
+        if (this.tick++ === 113) {
             this.tick = 0
           this._obstacles.push(new Obstacle(ctx))
         }
@@ -46,6 +46,7 @@ class Game {
           this.beer.push(new Beer(ctx))
         }
       }
+
       _addCoin() {
         if (this.tick2++ === 50) {
             this.tick2 = 0
@@ -89,24 +90,25 @@ class Game {
 
       _checkCollisions() {
         this.beer.forEach(o => {
-          const colX = this._maria.x + this._maria.w > o.x && this._maria.x < o.x + o.w
-          const colY = this._maria.y + this._maria.h > o.y && this._maria.y < o.y + o.h 
+          const colX = (this._maria.x - 10) + (this._maria.w - 10) > o.x && (this._maria.x - 10) < o.x + o.w
+          const colY = (this._maria.y - 10) + (this._maria.h - 10) > o.y && (this._maria.y - 10) < o.y + o.h 
           if (colX && colY) {
             this._gameOver()
           }
         })
 
         this._obstacles.forEach(o => {
-          const colX = this._maria.x + this._maria.w > o.x && this._maria.x < o.x + o.w
-          const colY = this._maria.y + this._maria.h > o.y && this._maria.y < o.y + o.h 
+          const colX = (this._maria.x - 10) + (this._maria.w - 10) > o.x  && (this._maria.x - 10) < o.x + o.w 
+          const colY = (this._maria.y - 10) + (this._maria.h - 10) > o.y  && (this._maria.y - 10) < o.y + o.h  
           if (colX && colY && !this._maria.invencible) {
-            
             this._maria.invencible = true
             this.score--
             this._maria.setVencible()
-          } 
+          } else if (this.score < 0){
+            this._gameOver()
+          }
         })
-
+        //consolelog para saber que se esta haciendo bien la suma y resta de puntos
         console.log(this.score)
         this.coins.some((coin) => {
           if(coin.collide(this._maria)){

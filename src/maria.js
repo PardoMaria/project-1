@@ -12,7 +12,7 @@ class Maria {
         this.x = 0.1 * this._ctx.canvas.width
         this.y0 = 350 
         this.y = this.y0
-        this.w = 40
+        this.w = 60
         this.h0 = 130
         this.h = this.h0
         this.vx = 0
@@ -101,8 +101,8 @@ class Maria {
     _jump() {
         if (!this._isJumping()) {
           this._img.frameIndex = 2
-          this.y -= 20;
-          this.vy -= 15;
+          this.y -= 25;
+          this.vy -= 20;
         }
       }
 
