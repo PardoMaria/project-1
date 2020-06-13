@@ -5,7 +5,7 @@ class Obstacle {
         this.w = 120
         this.h = 120
         this.x = this._ctx.canvas.width
-        this.vx = -5
+        this.vx = -6
 
         this._img = new Image()
         this._img.src = "Images/OBSTACULO-ORDENADOR.png"
