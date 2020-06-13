@@ -2,15 +2,15 @@ class Coin {
     constructor(ctx) {
       this._ctx = ctx
       this.x = this._ctx.canvas.width
-      this.y = 300
-      this.w = 90
-      this.h = 90
+      this.y = 360
+      this.w = 100
+      this.h = 100
       this.vx = -5
       this.catched = false
       this.value = 10
       this._img = new Image()
-      this._img.src = "../moneda-ironhack.png"
-  
+      this._img.src = "../Images/moneda-ironhack.png"
+      
     }
   
     draw() {

@@ -7,10 +7,26 @@
     <link href="css/style.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
+    <div class="nav-bar">
+      <div>
+        <button id="start"></button>
+        <button id="pause"></button>
+        <button id="reload"></button>
+      </div>
+      <div class="my-coins">
+        <img src="./Images/learn-javascript.png" alt="coin" id="coin">
+        <h2 id="counter">0</h2>
+      </div>
+    </div>
+    <div id="welcome">
+      <img src="./Images/festisite_super-maria.png" class="supermaria">
+    </div>
     <canvas id="canvas" width="800" height="500">
+    
     <script src="src/coin.js"></script>
     <script src="src/bigObstacle.js"></script>
     <script src="src/obstacle.js"></script>
+    <script src="src/bullet.js"></script>
     <script src="src/maria.js"></script>
     <script src="src/background.js"></script>
     <script src="src/game.js"></script>

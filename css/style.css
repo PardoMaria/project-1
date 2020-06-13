@@ -1,5 +1,76 @@
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 canvas {
-    border: 1px dotted;
     margin: 0 auto;
     display: block;
+  }
+
+  .nav-bar {
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0; 
+  }
+
+  .supermaria {
+    width: 500px; 
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 350px;
+
+  }
+
+  .d-none{
+    display: none;
+    visibility: hidden;
+  }
+    
+  
+  #coin {
+    height: 40px;
+    width: 40px;
+  }
+  
+  .my-coins {
+    display: flex;
+  }
+  
+
+  #start {
+    width: 40px;
+    height: 40px;
+    background-image: url("../Images/play-button.png");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    border: none;
+  }
+
+  .btn-hidden {
+    pointer-events: none;
+    visibility: hidden;
+    display: none;
+  }
+  
+  #pause {
+    width: 40px;
+    height: 40px;
+    background-image: url("../Images/pause.png");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    border: none;
+  }
+
+  #reload {
+    width: 40px;
+    height: 40px;
+    background-image: url("../Images/reload.png");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    border: none;
   }

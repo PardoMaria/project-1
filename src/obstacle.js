@@ -2,13 +2,13 @@ class Obstacle {
     constructor(ctx) {
         this._ctx = ctx
         this.y = 390
-        this.w = 100
-        this.h = 100
+        this.w = 120
+        this.h = 120
         this.x = this._ctx.canvas.width
         this.vx = -5
 
         this._img = new Image()
-        this._img.src = "../OBSTACULO-ORDENADOR.png"
+        this._img.src = "../Images/OBSTACULO-ORDENADOR.png"
       }
     
       draw() {
@@ -32,12 +32,6 @@ class Obstacle {
         return colX && colY
       }
 
-      /*isVisible() {
-        return (
-          this.x < this._ctx.canvas.width * 2 &&
-          this.x > 0 - this._ctx.canvas.width
-        )
-      }*/
 
     }
 

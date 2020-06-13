@@ -2,6 +2,7 @@ const TOP_KEY = 38
 const DOWN_KEY = 40
 const RIGHT_KEY = 39
 const LEFT_KEY = 37
+const SPACE_KEY = 32
 
 
 class Maria {
@@ -20,9 +21,13 @@ class Maria {
         this.ay = 0.8
         this.invencible = false
         this._img = new Image()
-        this._img.src = "../maria-sprite.png"
+        this._img.src = "../Images/maria-sprite.png"
         this._img.frames = 3
         this._img.frameIndex = 0
+
+        this.bullets = []
+        this.jumpSound = new Audio ("../Audio/Jump.mp3")
+        this.shootSound = new Audio ("../Audio/teclado.mp3")
 
         this._setListeners()
     }
@@ -45,7 +50,8 @@ class Maria {
           this.h
         )
         this._animate()
-    
+        
+        this.bullets.forEach(b => b.draw())
       }
 
       move() {
@@ -57,12 +63,13 @@ class Maria {
         } else {
           this.vy = 0;
         }
+        this.bullets.forEach(b => b.move())
       }
 
       _animate() {
         this.tick++
     
-        if (this.tick > 8) {
+        if (this.tick > 4) {
           this.tick = 0
     
           if (!this._isJumping()) {
@@ -81,6 +88,8 @@ class Maria {
               this._jump()
             } else if(e.keyCode === DOWN_KEY) {
               this._bend()
+            } else if(e.keyCode === SPACE_KEY) {
+              this._shoot()
             } else if (e.keyCode === RIGHT_KEY) {
               this.vx = 5
             } else if (e.keyCode === LEFT_KEY) {
@@ -98,11 +107,23 @@ class Maria {
       }
     }
 
+    _shoot() {
+      this.shootSound.play()
+      this.bullets.push(
+        new Bullet(
+          this._ctx,
+          this.x + this.w,
+          this.y + ((this.h/3)*1.5)
+        )
+      )
+    }
+
     _jump() {
         if (!this._isJumping()) {
           this._img.frameIndex = 2
           this.y -= 25;
           this.vy -= 20;
+          this.jumpSound.play()
         }
       }
 
