@@ -8,7 +8,7 @@ class Beer {
         this.vx = -5
 
         this._img = new Image()
-        this._img.src = "../Images/cerveza-notechoques-01.png"
+        this._img.src = "Images/cerveza-notechoques-01.png"
         console.log(this.y)
     }
 

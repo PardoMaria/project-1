@@ -15,7 +15,7 @@ class Background {
         this.h = this._ctx.canvas.height
 
         this._img = new Image ()
-        this._img.src = "../Images/fondo-mariìa-sinpixel-01.jpg"
+        this._img.src = "Images/fondo-mariìa-sinpixel-01.jpg"
     }
     draw() {
         this._ctx.drawImage(

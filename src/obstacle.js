@@ -8,7 +8,7 @@ class Obstacle {
         this.vx = -5
 
         this._img = new Image()
-        this._img.src = "../Images/OBSTACULO-ORDENADOR.png"
+        this._img.src = "Images/OBSTACULO-ORDENADOR.png"
       }
     
       draw() {

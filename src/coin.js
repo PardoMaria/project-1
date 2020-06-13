@@ -9,7 +9,7 @@ class Coin {
       this.catched = false
       this.value = 10
       this._img = new Image()
-      this._img.src = "../Images/moneda-ironhack.png"
+      this._img.src = "Images/moneda-ironhack.png"
       
     }
   

@@ -6,7 +6,7 @@ class Game {
   
       this._bg = new Background(ctx)
       this._maria = new Maria(ctx)
-      this.audio = new Audio ("../Audio/bucle.mp3")
+      this.audio = new Audio ("Audio/bucle.mp3")
       this.audio.loop = true
       this._obstacles = [
        
@@ -24,7 +24,7 @@ class Game {
       
       this.tick3 = 0
       this.score = this._maria.coins.length
-      this.coinSound = new Audio ("../Audio/Coin.mp3")
+      this.coinSound = new Audio ("Audio/Coin.mp3")
       this.scoreDOMElement = document.getElementById("counter")
 
 

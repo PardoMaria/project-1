@@ -8,7 +8,7 @@ class Bullet {
       this.vx = 10
   
       this._img = new Image()
-      this._img.src = "../Images/consolelog-weapon-01.png"
+      this._img.src = "Images/consolelog-weapon-01.png"
     }
   
     draw() {

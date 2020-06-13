@@ -21,13 +21,13 @@ class Maria {
         this.ay = 0.8
         this.invencible = false
         this._img = new Image()
-        this._img.src = "../Images/maria-sprite.png"
+        this._img.src = "Images/maria-sprite.png"
         this._img.frames = 3
         this._img.frameIndex = 0
 
         this.bullets = []
-        this.jumpSound = new Audio ("../Audio/Jump.mp3")
-        this.shootSound = new Audio ("../Audio/teclado.mp3")
+        this.jumpSound = new Audio ("Audio/Jump.mp3")
+        this.shootSound = new Audio ("Audio/teclado.mp3")
 
         this._setListeners()
     }
